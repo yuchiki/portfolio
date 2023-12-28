@@ -12,7 +12,14 @@
 		"vscode": {
 			"extensions": [
 				"astro-build.astro-vscode"
-			]
+			],
+			"settings": {
+				"eslint.validate": [
+					"javascript",
+					"astro",
+					"typescript"
+				]
+			}
 		}
 	},
 	"postCreateCommand": "npm ci"
