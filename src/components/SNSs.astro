@@ -1,0 +1,37 @@
+---
+const SNSLinks: {
+  name: string;
+  url: string;
+  username: string;
+  icon: string;
+}[] = [
+  {
+    name: "X",
+    url: "https://twitter.com/yuchiki1000yen",
+    username: "yuchiki1000yen",
+    icon: "x-logo.png",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/yuchiki",
+    username: "yuchiki",
+    icon: "github-mark.png",
+  },
+  {
+    name: "Qiita",
+    url: "https://qiita.com/yuchiki1000yen",
+    username: "yuchiki1000yen",
+    icon: "qiita-logo.png",
+  },
+];
+---
+
+<div class="SNS">
+  {
+    SNSLinks.map((SNSLink) => (
+      <a href={SNSLink.url}>
+        <img src={SNSLink.icon} alt={SNSLink.name} />
+      </a>
+    ))
+  }
+</div>

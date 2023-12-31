@@ -1,0 +1,9 @@
+---
+const { title, abstract, image } = Astro.props;
+---
+
+<div class="ogp-card">
+  <h2>{title}</h2>
+  <p>{abstract}</p>
+  <img src={image} alt={title} />
+</div>
