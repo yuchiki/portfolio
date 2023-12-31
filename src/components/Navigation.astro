@@ -1,0 +1,26 @@
+---
+const pages = [
+  {
+    title: "Home",
+    url: "/",
+  },
+  {
+    title: "Profile",
+    url: "/profile",
+  },
+  {
+    title: "Contact",
+    url: "/contact",
+  },
+  {
+    title: "Works",
+    url: "/works",
+  },
+];
+---
+
+<div class="nav">
+  <div class="nav_list">
+    {pages.map((page) => <a href={page.url}>{page.title}</a>)}
+  </div>
+</div>

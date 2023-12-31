@@ -1,7 +1,30 @@
 ---
+import DefaultLayout from "@layouts/DefaultLayout.astro";
+import OGPCard from "@components/OGPCard.astro";
 
-import DefaultLayout from "@layouts/DefaultLayout.astro"
-
+const sample_OGPs = [
+  {
+    title: "（テスト）驚愕！お茶を飲む羅針盤",
+    description: "お茶を飲むと、羅針盤が回る！？",
+    image: "sample-ogp-1.jpg",
+  },
+  {
+    title: "（テスト）最近はデトックス指向デプロイメントが覇権を握りつつある",
+    description:
+      "デトックス指向デプロイメントは、デプロイメントの中でも最もデトックス性が高いと言われています。",
+    image: "sample-ogp-2.png",
+  },
+  {
+    title: "（テスト）今日のお昼ご飯は、ハンバーガー",
+    description: "ハンバーガーは、お昼ご飯に最適です。",
+    image: "sample-ogp-3.jpg",
+  },
+];
 ---
 
-<DefaultLayout title="home"/>
+<DefaultLayout title="Home">
+  <p>今井雄毅です。 ITエンジニアをしています。</p>
+  <div class="ogp-container">
+    {sample_OGPs.map((ogp) => <OGPCard {...ogp} />)}
+  </div>
+</DefaultLayout>
