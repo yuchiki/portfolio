@@ -1,7 +1,20 @@
 ---
 import Navigation from "./Navigation.astro";
+import { nearBlackColor } from "@layouts/Color";
 ---
 
-<header>
+<>
+  <span><p>ゆーちきのページ </p></span>
   <Navigation />
-</header>
+<>
+
+<style define:vars={{nearBlackColor}}>
+  p {
+    font-size:xx-large;
+    font-family: "Hina Mincho", "san-serif";
+    font-weight:bold;
+    color: var(--nearBlackColor);
+
+    margin-left: 5%;
+  }
+</style>

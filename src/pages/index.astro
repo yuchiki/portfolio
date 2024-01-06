@@ -12,19 +12,51 @@ const sample_OGPs = [
     title: "（テスト）最近はデトックス指向デプロイメントが覇権を握りつつある",
     description:
       "デトックス指向デプロイメントは、デプロイメントの中でも最もデトックス性が高いと言われています。",
+    image: "sample-ogp-3.jpg",
+  },
+  {
+    title: "（テスト）2今日のお昼ご飯は、ハンバーガー",
+    description: "ハンバーガーは、お昼ご飯に最適です。",
+    image: "sample-ogp-1.jpg",
+  },
+  {
+    title: "（テスト）2驚愕！お茶を飲む羅針盤",
+    description: "お茶を飲むと、羅針盤が回る！？",
     image: "sample-ogp-2.png",
   },
   {
-    title: "（テスト）今日のお昼ご飯は、ハンバーガー",
+    title: "（テスト）2最近はデトックス指向デプロイメントが覇権を握りつつある",
+    description:
+      "デトックス指向デプロイメントは、デプロイメントの中でも最もデトックス性が高いと言われています。",
+    image: "sample-ogp-1.jpg",
+  },
+  {
+    title: "（テスト）3今日のお昼ご飯は、ハンバーガー",
     description: "ハンバーガーは、お昼ご飯に最適です。",
-    image: "sample-ogp-3.jpg",
+    image: "sample-ogp-1.jpg",
+  },
+  {
+    title: "（テスト）2今日のお昼ご飯は、ハンバーガー",
+    description: "ハンバーガーは、お昼ご飯に最適です。",
+    image: "sample-ogp-1.jpg",
   },
 ];
 ---
 
 <DefaultLayout title="Home">
   <p>今井雄毅です。 ITエンジニアをしています。</p>
+  <h2>ものたち</h2>
   <div class="ogp-container">
     {sample_OGPs.map((ogp) => <OGPCard {...ogp} />)}
   </div>
 </DefaultLayout>
+
+
+<style>
+  .ogp-container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: space-between;
+  }
