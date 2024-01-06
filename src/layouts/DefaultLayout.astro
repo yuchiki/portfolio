@@ -1,9 +1,14 @@
 ---
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
+import {backgroundColor, accentColor, textColor} from "@layouts/Color.ts";
 
 type Props = { title: string };
 const { title } = Astro.props;
+
+
+const headerSize = "50px";
+const footerSize = "100px";
 ---
 
 <html lang="en">
@@ -13,12 +18,75 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} - Yuki Imai's site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    
   </head>
 
   <body>
-    <Header />
-    <h1>{title}</h1>
-    <slot />
-    <Footer />
+    <header>
+      <Header />
+    </header>
+    <div class="main">
+      <h1>{title}</h1>
+      <slot />
+    </div>
+    <footer>
+      <Footer/>
+    </footer>
   </body>
 </html>
+
+<style define:vars={{headerSize,footerSize,accentColor, backgroundColor}}>
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color:var(--backgroundColor);
+    min-height: 100vh;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: var(--headerSize);
+    margin: 0 auto;
+    background-color: var(--accentColor);
+    z-index: 2;
+  }
+
+  footer {
+    height: var(--footerSize);
+    margin: 0 auto;
+    background-color: var(--accentColor);
+  }
+
+  .main {
+    min-height: calc(100vh - var(--headerSize) -  var(--footerSize));
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    padding-top: var(--headerSize);
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+</style>
+
+
+<style is:global define:vars={{textColor}}>
+  * {
+      color: var(--textColor);
+      margin: 0;
+      font-family: 'Zen Maru Gothic', sans-serif;
+    }
+
+    h1,h2,h3 {
+      font-family: 'Hina Mincho', sans-serif;
+    }
+</style>

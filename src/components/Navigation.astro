@@ -1,4 +1,6 @@
 ---
+import { nearBlackColor } from "@layouts/Color";
+
 const pages = [
   {
     title: "Home",
@@ -19,8 +21,27 @@ const pages = [
 ];
 ---
 
-<div class="nav">
-  <div class="nav_list">
-    {pages.map((page) => <a href={page.url}>{page.title}</a>)}
-  </div>
-</div>
+<p class="nav_list">
+  {pages.map((page) => <a href={page.url}>{page.title}</a>)}
+</p>
+
+
+<style define:vars={{nearBlackColor}}>
+  .nav_list {
+    
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    vertical-align: bottom;
+
+    a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-family: "Hina Mincho", serif;
+      font-size:1.5rem;
+      font-weight: bold;
+      color: var(--nearBlackColor);
+    }
+  }
+</style>
